@@ -87,7 +87,26 @@ The experiment demonstrates that removing the HTTPS feature alone did not improv
 ## Installation
 
 Clone the repository and navigate to the project directory.
+                                                                                             ### Dataset Preparation
 
+The training dataset is built using two publicly available sources:
+
+- **Phishing URLs:** [Phishing.Database](https://github.com/Phishing-Database/Phishing.Database)
+- **Legitimate domains:** [Cisco Umbrella Top 1M](https://umbrella.cisco.com/blog/cisco-umbrella-1-million)
+
+Download the datasets and place the extracted files in the `data/` directory using the following filenames:
+
+```text
+data/
+├── dataSet.txt
+└── top-1m.csv
+```
+
+The `dataSet.txt` file must contain phishing URLs, one per line. The `top-1m.csv` file must contain the ranked domain list in CSV format.
+
+The raw datasets and trained models are not included in this repository because of their size.
+
+Run `prepare_data.py` to generate the training dataset, followed by `train_model.py` to train and save the machine learning model.                                                   
 Create and activate a Python virtual environment:
 
 ```bash
