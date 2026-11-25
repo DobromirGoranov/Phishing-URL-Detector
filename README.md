@@ -6,6 +6,27 @@ A cybersecurity project designed to identify potentially malicious URLs using ma
 
 The application provides an interactive web interface built with Streamlit, allowing users to analyze URLs, view phishing risk estimates, and examine suspicious URL characteristics.
 
+### Hybrid Phishing Detection
+
+The application combines two complementary security analysis methods:
+
+**1. Machine Learning Analysis**
+- Uses a trained Random Forest classifier.
+- Extracts 10 URL-based features.
+- Displays the model's estimated phishing probability.
+
+**2. Rule-Based Security Analysis**
+- Detects possible impersonation of well-known brands.
+- Identifies suspicious keywords in URLs.
+- Checks for IP-based URLs, missing HTTPS, unusually long URLs, and suspicious URL structures.
+- Calculates a rule-based suspicion score from 0 to 100.
+
+**Final Assessment**
+
+The application provides a final assessment based on both analyses. Suspicious characteristics can trigger warnings even when the machine learning model classifies a URL as legitimate.
+
+The rule-based score is heuristic and is not a calibrated probability. Neither method guarantees that a URL is safe or malicious.
+
 ## Features
 
 - **URL Analysis:** Analyze user-provided URLs without visiting the websites.
